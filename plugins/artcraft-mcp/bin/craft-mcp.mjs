@@ -9,7 +9,7 @@ import { accessSync, constants, mkdirSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 
-const VERSION = "0.1.0";
+const VERSION = "0.1.1";
 
 const APPS = {
   photocraft: "PhotoCraft",

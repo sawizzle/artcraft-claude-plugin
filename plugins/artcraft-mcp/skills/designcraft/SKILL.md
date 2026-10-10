@@ -17,13 +17,15 @@ Server: `designcraft` (`designcraft-cli mcp`). Tested with designcraft-cli 0.4.0
    `margins`, `columns`, `gutter`, `facingPages`, `bleed`.
 2. `execute {"command":"frame.create","params":{"rect":[54,54,558,200],"content":"text","text":"Headline"}}`
    → `{id, story}`. The `rect` is `[x0,y0,x1,y1]` in spread coordinates.
-3. **Style text:** select the frame, then call `type.char` with the attributes wrapped in `attrs`:
+3. **Style text:** select the frame (or a text range), then call `type.char`:
    - `execute {"command":"selection.set","params":{"ids":[<frame id>]}}`
-   - `execute {"command":"type.char","params":{"attrs":{"size":36,"fontFamily":"..."}}}`
-   - Success and failure both return `null`. `{"size":36}` without `attrs`, or a call with nothing
-     selected, changes nothing and gives no error. (The `execute` tool description shows the form without
-     `attrs`, which doesn't work in 0.4.0.) An unknown key inside `attrs` is rejected.
-   - **Check the result** with `get_story`, `inspect_document` or `render_page`.
+   - `execute {"command":"type.char","params":{"size":36,"fontFamily":"..."}}`. The form
+     `{"attrs":{...}}` works too. An unknown attribute is rejected.
+   - **Watch out:** `frame.create` with text leaves a **text caret** at the end of the new text. With a
+     caret inside existing text, `type.char` returns `null` and **changes nothing**
+     (storytold/designcraft#289). Select the frame first, as above. With nothing selected at all, the
+     call fails with "select text or a text frame".
+   - `null` is also what a successful call returns, so **check the result** with `render_page`.
 4. `place_image {"path":"/abs/img.png","x":54,"y":240,"width":504}` places into a new frame. Pass `frame`
    to place into an existing one.
 5. Check the layout:

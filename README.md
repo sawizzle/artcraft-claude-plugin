@@ -118,7 +118,7 @@ The skills still apply. Install the plugin for the skills and disable its server
   - PhotoCraft wants relative paths.
   - FilmCraft has no selection when headless, so you pass clip ids explicitly; effects arrive with default
     values (Gaussian Blur at 0).
-  - DesignCraft's `type.char` needs a selection and an `attrs` wrapper, and returns `null` either way.
+  - DesignCraft's `type.char` silently does nothing with the text caret `frame.create` leaves behind; select the frame first.
   - LightCraft scales exports down to 3000 px unless you pass `longEdge: 0`.
 
 ## Test your setup
@@ -146,6 +146,8 @@ a bug, attach the failing `tests/steps/<app>.json` step and `tests/out/<app>_rep
   unknown options without complaint.
 - [storytold/vectorcraft#849](https://github.com/storytold/vectorcraft/issues/849#issuecomment-6091137205):
   the GUI picks the integrated GPU on machines with two GPUs. Fixed on main after 0.7.0.
+- [storytold/designcraft#289](https://github.com/storytold/designcraft/issues/289): character formatting at a caret inside
+  existing text is silently discarded.
 
 ## License
 MIT OR Apache-2.0, at your option. Unless you state otherwise, any contribution you submit is

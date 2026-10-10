@@ -1,0 +1,38 @@
+[
+ {
+  "tool": "import",
+  "args": {
+   "paths": [
+    "{IN}/test_card.jpg"
+   ]
+  }
+ },
+ {
+  "tool": "query_photos",
+  "args": {
+   "limit": 5
+  }
+ },
+ {
+  "tool": "set_develop",
+  "args": {
+   "values": {
+    "light.exposure": 0.7,
+    "light.contrast": 25
+   }
+  }
+ },
+ {
+  "tool": "render_photo",
+  "args": {
+   "size": 640
+  }
+ },
+ {
+  "tool": "export",
+  "args": {
+   "path": "{OUT}/lightcraft_out.jpg",
+   "longEdge": 0
+  }
+ }
+]

@@ -1,0 +1,67 @@
+{
+  "mcpServers": {
+    "photocraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "photocraft",
+        "mcp"
+      ],
+      "env": {
+        "CRAFT_OPT_PHOTOCRAFT_READ_ROOT": "${user_config.photocraft_read_root}",
+        "CRAFT_OPT_PHOTOCRAFT_WRITE_ROOT": "${user_config.photocraft_write_root}"
+      }
+    },
+    "vectorcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "vectorcraft",
+        "mcp",
+        "--headless"
+      ]
+    },
+    "filmcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "filmcraft",
+        "mcp"
+      ]
+    },
+    "lightcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "lightcraft",
+        "mcp",
+        "--compact"
+      ]
+    },
+    "pdfcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "pdfcraft",
+        "mcp",
+        "--compact"
+      ]
+    },
+    "effectcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "effectcraft",
+        "mcp"
+      ]
+    },
+    "designcraft": {
+      "command": "node",
+      "args": [
+        "${CLAUDE_PLUGIN_ROOT}/bin/craft-mcp.mjs",
+        "designcraft",
+        "mcp"
+      ]
+    }
+  }
+}

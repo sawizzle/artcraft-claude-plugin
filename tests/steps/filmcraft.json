@@ -1,0 +1,84 @@
+[
+ {
+  "tool": "media_import",
+  "args": {
+   "text": "{IN}/test_clip.mp4"
+  }
+ },
+ {
+  "tool": "command_run",
+  "args": {
+   "id": "file.newSequenceFromClip",
+   "params": {
+    "items": [
+     1
+    ]
+   }
+  }
+ },
+ {
+  "tool": "command_run",
+  "args": {
+   "id": "timeline.razor",
+   "params": {
+    "seconds": 1.5
+   }
+  }
+ },
+ {
+  "tool": "command_run",
+  "args": {
+   "id": "effects.apply",
+   "params": {
+    "clips": [
+     6
+    ],
+    "effect": "Gaussian Blur"
+   }
+  }
+ },
+ {
+  "tool": "command_run",
+  "args": {
+   "id": "effects.setParam",
+   "params": {
+    "clip": 6,
+    "effect": "gaussian_blur",
+    "param": "blurriness",
+    "value": 40
+   }
+  }
+ },
+ {
+  "tool": "sequence_inspect",
+  "args": {}
+ },
+ {
+  "tool": "render_frame",
+  "args": {
+   "seconds": 1.0,
+   "max_side": 640
+  }
+ },
+ {
+  "tool": "command_run",
+  "args": {
+   "id": "file.exportMedia",
+   "params": {
+    "path": "{OUT}/filmcraft_out.mp4",
+    "format": "h264",
+    "wait": true
+   }
+  },
+  "timeout": 300
+ },
+ {
+  "tool": "command_run",
+  "args": {
+   "id": "file.exportFcpxml",
+   "params": {
+    "path": "{OUT}/filmcraft_out.fcpxml"
+   }
+  }
+ }
+]

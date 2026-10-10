@@ -1,0 +1,7 @@
+[{"tool":"doc_open","args":{"path":"inputs/test_card.png"}},
+ {"tool":"command_run","args":{"id":"filter.blur.gaussianBlur","params":{"radius":12}}},
+ {"tool":"doc_inspect","args":{}},
+ {"tool":"doc_render_preview","args":{"max_side":640}},
+ {"tool":"doc_export","args":{"path":"photocraft_blur.png"}},
+ {"tool":"doc_new","args":{"width":800,"height":600,"background":"#3366ff","name":"probe"}},
+ {"tool":"doc_export","args":{"path":"photocraft_new.jpg","quality":90}}]

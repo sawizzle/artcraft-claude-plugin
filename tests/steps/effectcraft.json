@@ -1,0 +1,10 @@
+[{"tool":"open_project","args":{"new":true}},
+ {"tool":"execute_command","args":{"command":"comp.new","params":{"name":"Main","width":1280,"height":720,"frameRate":24,"duration":3}}},
+ {"tool":"execute_command","args":{"command":"layer.newSolid","params":{"color":"#3366ff"}}},
+ {"tool":"execute_command","args":{"command":"layer.newText","params":{"text":"ArtCraft MCP","size":110,"fill":"#ffffff"}}},
+ {"tool":"run_script","args":{"code":"var c=app.project.activeItem; c.name + ' layers=' + c.numLayers"}},
+ {"tool":"get_project","args":{}},
+ {"tool":"render_frame","args":{"time":1,"max_side":640,"path":"{OUT}/effectcraft_frame.png"}},
+ {"tool":"execute_command","args":{"command":"renderQueue.add","params":{"comp":"Main","format":"h264","output":"{OUT}/effectcraft_out.mp4"}}},
+ {"tool":"execute_command","args":{"command":"renderQueue.render","params":{"wait":true}},"timeout":300},
+ {"tool":"save_project","args":{"path":"{OUT}/effectcraft_out.ecproj"}}]

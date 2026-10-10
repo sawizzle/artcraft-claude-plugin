@@ -1,0 +1,10 @@
+[{"tool":"new_document","args":{"width":612,"height":792}},
+ {"tool":"execute","args":{"command":"frame.create","params":{"rect":[54,54,558,200],"content":"text","text":"ArtCraft MCP smoke test"}}},
+ {"tool":"execute","args":{"command":"selection.set","params":{"ids":[8]}}},
+ {"tool":"execute","args":{"command":"type.char","params":{"attrs":{"size":36}}}},
+ {"tool":"place_image","args":{"path":"{IN}/test_card.png","x":54,"y":240,"width":504}},
+ {"tool":"inspect_document","args":{}},
+ {"tool":"render_page","args":{"page":0,"scale":1}},
+ {"tool":"export_png","args":{"path":"{OUT}/designcraft_out.png","page":0,"scale":1}},
+ {"tool":"execute","args":{"command":"file.exportPdf","params":{"path":"{OUT}/designcraft_out.pdf"}}},
+ {"tool":"save_document","args":{"path":"{OUT}/designcraft_out.designcraft"}}]

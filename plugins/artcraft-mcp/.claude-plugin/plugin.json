@@ -1,0 +1,39 @@
+{
+  "name": "artcraft-mcp",
+  "version": "0.1.0",
+  "description": "Unofficial: drive the open-source ArtCraft apps (PhotoCraft, VectorCraft, FilmCraft, LightCraft, PdfCraft, EffectCraft, DesignCraft) from Claude Code through their built-in MCP servers, with a tested skill per app. Not affiliated with the ArtCraft Team.",
+  "author": {
+    "name": "PurpleDaddy",
+    "url": "https://github.com/sawizzle"
+  },
+  "homepage": "https://github.com/sawizzle/artcraft-claude-plugin",
+  "repository": "https://github.com/sawizzle/artcraft-claude-plugin",
+  "license": "MIT OR Apache-2.0",
+  "keywords": [
+    "artcraft",
+    "photocraft",
+    "vectorcraft",
+    "filmcraft",
+    "lightcraft",
+    "pdfcraft",
+    "effectcraft",
+    "designcraft",
+    "mcp"
+  ],
+  "userConfig": {
+    "photocraft_read_root": {
+      "type": "directory",
+      "title": "PhotoCraft read root",
+      "description": "Folder PhotoCraft may read from; its tool paths are relative to it. Empty = $PHOTOCRAFT_READ_ROOT, else your home folder.",
+      "default": "",
+      "required": false
+    },
+    "photocraft_write_root": {
+      "type": "directory",
+      "title": "PhotoCraft write root",
+      "description": "Folder PhotoCraft may write (and overwrite files) in; export paths are relative to it. Empty = $PHOTOCRAFT_WRITE_ROOT, else ~/PhotoCraft.",
+      "default": "",
+      "required": false
+    }
+  }
+}

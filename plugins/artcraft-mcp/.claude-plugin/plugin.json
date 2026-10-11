@@ -1,6 +1,6 @@
 {
   "name": "artcraft-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Unofficial: drive the open-source ArtCraft apps (PhotoCraft, VectorCraft, FilmCraft, LightCraft, PdfCraft, EffectCraft, DesignCraft) from Claude Code through their built-in MCP servers, with a tested skill per app. Not affiliated with the ArtCraft Team.",
   "author": {
     "name": "PurpleDaddy",

@@ -1,6 +1,6 @@
 ---
 name: filmcraft
-description: Drive FilmCraft (open-source Premiere-style video editor) through its MCP server — import media, build and edit sequences (razor, trim, effects, audio), render frames, and export H.264/HEVC/ProRes/DNxHR/WAV video or EDL/FCP7 XML/FCPXML/OTIO/AAF interchange. Also covers working safely beside a human in the live app (--bridge) and observing their edits. Use when the user wants to cut, assemble, inspect, export or watch edits in FilmCraft.
+description: Unofficial third-party skill. Drive FilmCraft (open-source Premiere-style video editor) through its MCP server — import media, build and edit sequences (razor, trim, effects, audio), render frames, and export H.264/HEVC/ProRes/DNxHR/WAV video or EDL/FCP7 XML/FCPXML/OTIO/AAF interchange. Also covers working safely beside a human in the live app (--bridge) and observing their edits. Use when the user wants to cut, assemble, inspect, export or watch edits in FilmCraft.
 ---
 
 # FilmCraft via MCP

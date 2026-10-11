@@ -1,12 +1,12 @@
 ---
 name: photocraft
-description: Drive PhotoCraft (open-source Photoshop-style raster editor) through its MCP server — open/create images, run engine commands (filters, adjustments, layers), preview, and export PSD/PNG/JPEG/TIFF/WebP/EXR, headless or live in the app window. Use when the user wants to edit, filter, convert or batch-process raster images with PhotoCraft, watch or assist edits in the open PhotoCraft window, or when a photocraft tool call fails on a path.
+description: Unofficial third-party skill. Drive PhotoCraft (open-source Photoshop-style raster editor) through its MCP server — open/create images, run engine commands (filters, adjustments, layers), preview, and export PSD/PNG/JPEG/TIFF/WebP/EXR, headless or live in the app window. Use when the user wants to edit, filter, convert or batch-process raster images with PhotoCraft, watch or assist edits in the open PhotoCraft window, or when a photocraft tool call fails on a path.
 ---
 
 # PhotoCraft via MCP
 
 Server: `photocraft` (`photocraft-cli mcp`). Tested with photocraft-cli 0.6.0 on Windows 11 only (macOS and Linux
-not tested). Headless by default (the headless CLI links no GPU API, so it runs on the CPU). See the `artcraft-setup`
+not tested). Headless by default (the headless CLI links no GPU API, so it runs on the CPU). See the `creative-apps-setup`
 skill for the live-window flags.
 
 ## How to work
@@ -36,7 +36,7 @@ skill for the live-window flags.
 - Long roots, spaces, accented and CJK names, and full paths over 260 chars work. **Junctions and symlinks under
   the root are refused** ("a path led outside of the filesystem"), even when they point inside it. A junction given
   as the root itself is accepted.
-- To reach other folders, set the plugin options with `/plugin` → artcraft-mcp → configure, or with
+- To reach other folders, set the plugin options with `/plugin` → creative-apps-mcp → configure, or with
   `claude plugin configure ... --values-stdin`, then restart the session.
 
 ## Tested workflow

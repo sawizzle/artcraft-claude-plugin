@@ -1,5 +1,5 @@
 [{"tool":"doc_create","args":{"from":"blank","pages":2}},
- {"tool":"page_add_text","args":{"doc":1,"page":1,"text":"ArtCraft MCP smoke test\nPdfCraft page 1","at":[72,72],"size":24,"bold":true,"width":450}},
+ {"tool":"page_add_text","args":{"doc":1,"page":1,"text":"MCP smoke test\nPdfCraft page 1","at":[72,72],"size":24,"bold":true,"width":450}},
  {"tool":"doc_save","args":{"doc":1,"path":"{OUT}/pdfcraft_out.pdf"}},
  {"tool":"doc_open","args":{"path":"{OUT}/pdfcraft_out.pdf"}},
  {"tool":"text_extract","args":{"doc":2}},

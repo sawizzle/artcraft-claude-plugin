@@ -51,7 +51,7 @@ def main():
 
     rep = {"name": name, "cmd": cmd, "probe": VERSION, "steps": []}
     send({"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {
-        "protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "artcraft-probe", "version": VERSION}}})
+        "protocolVersion": "2025-06-18", "capabilities": {}, "clientInfo": {"name": "mcp-smoke-probe", "version": VERSION}}})
     r = recv(1, 60)
     if "result" not in r:
         rep["init_error"] = r

@@ -1,6 +1,6 @@
 ---
 name: vectorcraft
-description: Drive VectorCraft (open-source Illustrator-style vector editor) through its MCP server — draw shapes, paths and text, apply paint/effects/pathfinder, and export SVG/PDF/PNG/EPS/DXF/AI files, headless or in the live app window, including watching what a human changes in the live window. Use when the user wants vector artwork, icons, logos, posters or SVG/PDF exports made or edited with VectorCraft.
+description: Unofficial third-party skill. Drive VectorCraft (open-source Illustrator-style vector editor) through its MCP server — draw shapes, paths and text, apply paint/effects/pathfinder, and export SVG/PDF/PNG/EPS/DXF/AI files, headless or in the live app window, including watching what a human changes in the live window. Use when the user wants vector artwork, icons, logos, posters or SVG/PDF exports made or edited with VectorCraft.
 ---
 
 # VectorCraft via MCP

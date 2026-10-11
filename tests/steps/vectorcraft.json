@@ -1,6 +1,6 @@
 [{"tool":"draw_shape","args":{"shape":"rectangle","x":50,"y":50,"width":400,"height":250,"radius":24,"fill":"#ff6633"}},
  {"tool":"draw_shape","args":{"shape":"star","cx":300,"cy":400,"radius1":120,"radius2":50,"points":5,"fill":"#ffd700"}},
- {"tool":"add_text","args":{"text":"ArtCraft MCP","x":80,"y":180,"color":"#ffffff"}},
+ {"tool":"add_text","args":{"text":"MCP smoke test","x":80,"y":180,"color":"#ffffff"}},
  {"tool":"inspect_document","args":{"depth":1}},
  {"tool":"screenshot","args":{}},
  {"tool":"export","args":{"path":"{OUT}/vectorcraft_out.svg"}},

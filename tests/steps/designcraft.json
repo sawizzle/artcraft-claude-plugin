@@ -1,5 +1,5 @@
 [{"tool":"new_document","args":{"width":612,"height":792}},
- {"tool":"execute","args":{"command":"frame.create","params":{"rect":[54,54,558,200],"content":"text","text":"ArtCraft MCP smoke test"}}},
+ {"tool":"execute","args":{"command":"frame.create","params":{"rect":[54,54,558,200],"content":"text","text":"MCP smoke test"}}},
  {"tool":"execute","args":{"command":"selection.set","params":{"ids":[8]}}},
  {"tool":"execute","args":{"command":"type.char","params":{"size":36}}},
  {"tool":"place_image","args":{"path":"{IN}/test_card.png","x":54,"y":240,"width":504}},

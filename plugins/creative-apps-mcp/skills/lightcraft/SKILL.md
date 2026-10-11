@@ -1,6 +1,6 @@
 ---
 name: lightcraft
-description: Drive LightCraft (open-source Lightroom-style photo library and raw developer) through its MCP server — import photos/raws, set develop sliders, LUT profiles, presets, crop, virtual copies, ratings and keywords, render previews and export JPEG/PNG/TIFF/WebP/AVIF/DNG; or connect to the live LightCraft window to assist or observe a person's edits. Use when the user wants to grade, develop, cull, rate, query or batch-export photos with LightCraft, or watch what they do in it.
+description: Unofficial third-party skill. Drive LightCraft (open-source Lightroom-style photo library and raw developer) through its MCP server — import photos/raws, set develop sliders, LUT profiles, presets, crop, virtual copies, ratings and keywords, render previews and export JPEG/PNG/TIFF/WebP/AVIF/DNG; or connect to the live LightCraft window to assist or observe a person's edits. Use when the user wants to grade, develop, cull, rate, query or batch-export photos with LightCraft, or watch what they do in it.
 ---
 
 # LightCraft via MCP

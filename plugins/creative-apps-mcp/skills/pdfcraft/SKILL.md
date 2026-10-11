@@ -1,6 +1,6 @@
 ---
 name: pdfcraft
-description: Drive PdfCraft (open-source Acrobat-style PDF workbench) through its MCP server — create, read, extract text, render pages, add text/images, combine/split, forms, comments, redaction, OCR, PDF/A, compare and sign. Use when the user wants to read, build, edit, fill, redact, merge or inspect PDFs with PdfCraft.
+description: Unofficial third-party skill. Drive PdfCraft (open-source Acrobat-style PDF workbench) through its MCP server — create, read, extract text, render pages, add text/images, combine/split, forms, comments, redaction, OCR, PDF/A, compare and sign. Use when the user wants to read, build, edit, fill, redact, merge or inspect PDFs with PdfCraft.
 ---
 
 # PdfCraft via MCP
@@ -39,7 +39,7 @@ Server: `pdfcraft`, launched by this plugin as `pdfcraft-cli mcp --compact`. Tes
 ## Security
 - `--root DIR` confines reads and writes to DIR, and it works. Opening a file outside DIR fails with
   "outside the allowed directory".
-- **However, 0.4.0 accepts any unknown option without an error** (storytold/pdfcraft#640). A misspelt
+- **However, 0.4.0 and 0.5.0 accept any unknown option without an error** (storytold/pdfcraft#640). A misspelt
   `--root` therefore starts the server unconfined. After changing flags, re-test by opening a file outside
   the root.
 - `js_run` runs document JavaScript. Don't run scripts from untrusted PDFs.

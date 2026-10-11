@@ -1,6 +1,6 @@
 ---
 name: designcraft
-description: Drive DesignCraft (open-source InDesign-style page layout app) through its MCP server — create documents, text and graphic frames, styles, place images, render pages, and export PDF/PNG/IDML/EPUB/HTML. Use when the user wants a flyer, poster, magazine page, brochure or multi-page layout built or exported with DesignCraft.
+description: Unofficial third-party skill. Drive DesignCraft (open-source InDesign-style page layout app) through its MCP server — create documents, text and graphic frames, styles, place images, render pages, and export PDF/PNG/IDML/EPUB/HTML. Use when the user wants a flyer, poster, magazine page, brochure or multi-page layout built or exported with DesignCraft.
 ---
 
 # DesignCraft via MCP

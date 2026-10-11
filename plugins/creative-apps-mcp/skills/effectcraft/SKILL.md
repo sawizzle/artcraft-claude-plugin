@@ -1,6 +1,6 @@
 ---
 name: effectcraft
-description: Drive EffectCraft (open-source After Effects-style motion graphics/VFX app) through its MCP server — create comps, solids/text/shape layers, effects, keyframes and expressions, run After Effects-style JavaScript, render frames, and render H.264/HEVC/ProRes/WebM/EXR via the render queue. Use when the user wants motion graphics, titles, animated text or VFX comps built or rendered with EffectCraft.
+description: Unofficial third-party skill. Drive EffectCraft (open-source After Effects-style motion graphics/VFX app) through its MCP server — create comps, solids/text/shape layers, effects, keyframes and expressions, run After Effects-style JavaScript, render frames, and render H.264/HEVC/ProRes/WebM/EXR via the render queue. Use when the user wants motion graphics, titles, animated text or VFX comps built or rendered with EffectCraft.
 ---
 
 # EffectCraft via MCP

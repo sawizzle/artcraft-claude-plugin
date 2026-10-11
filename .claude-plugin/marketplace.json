@@ -1,14 +1,14 @@
 {
-  "name": "sawizzle-artcraft",
+  "name": "sawizzle-plugins",
   "owner": {
     "name": "PurpleDaddy",
     "url": "https://github.com/sawizzle"
   },
-  "description": "Unofficial community Claude Code plugins for the open-source ArtCraft apps. Not affiliated with or endorsed by the ArtCraft Team.",
+  "description": "Unofficial third-party Claude Code plugins for open-source creative apps. Not made, sponsored, endorsed, certified or supported by the apps' developers.",
   "plugins": [
     {
-      "name": "artcraft-mcp",
-      "source": "./plugins/artcraft-mcp",
+      "name": "creative-apps-mcp",
+      "source": "./plugins/creative-apps-mcp",
       "description": "Unofficial: drive PhotoCraft, VectorCraft, FilmCraft, LightCraft, PdfCraft, EffectCraft and DesignCraft from Claude Code through their built-in MCP servers, with a tested skill per app."
     }
   ]

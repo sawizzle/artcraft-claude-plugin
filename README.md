@@ -1,27 +1,34 @@
-# Unofficial ArtCraft plugin for Claude Code
+# Unofficial third-party plugin for Claude Code: open-source creative apps
 
-This is a community Claude Code plugin for the open-source [ArtCraft](https://getartcraft.com/apps) apps.
+This is a third-party Claude Code plugin for the open-source apps listed at [getartcraft.com/apps](https://getartcraft.com/apps).
 It connects Claude to the MCP server each app already ships, and adds one skill per app. Each skill
 records the setup, workflows tested against real output, and the pitfalls hit along the way.
 
-> **Not affiliated with or endorsed by the ArtCraft Team.** The ArtCraft name and the app names are theirs.
-> This repository contains none of their logos or code. Report app bugs to the app repos, and plugin bugs
-> here.
+> **Unofficial third-party plugin.** Not made, sponsored, endorsed, certified or supported by the ArtCraft
+> Team, who make the apps it connects to; ArtCraft is their trademark. The app names identify the software
+> this plugin connects to and belong to their owners. No ArtCraft logos, artwork or app code are included.
+> Report plugin problems here; report a bug to an app's own repository only if you can reproduce it with
+> that app's CLI without this plugin.
 
-| App | Comparable to | MCP server | Tested version |
+| App | Comparable to | MCP server | Skill verified with |
 |---|---|---|---|
-| [PhotoCraft](https://github.com/storytold/photocraft) | Photoshop | `photocraft-cli mcp` | 0.5.0 |
-| [VectorCraft](https://github.com/storytold/vectorcraft) | Illustrator | `vectorcraft-cli mcp --headless` | 0.6.0, 0.7.0 |
-| [FilmCraft](https://github.com/storytold/filmcraft) | Premiere Pro | `filmcraft-cli mcp` | 0.4.0 |
-| [LightCraft](https://github.com/storytold/lightcraft) | Lightroom | `lightcraft-cli mcp --compact` | 0.4.0 |
+| [PhotoCraft](https://github.com/storytold/photocraft) | Photoshop | `photocraft-cli mcp` | 0.6.0 |
+| [VectorCraft](https://github.com/storytold/vectorcraft) | Illustrator | `vectorcraft-cli mcp --headless` | 0.8.0 |
+| [FilmCraft](https://github.com/storytold/filmcraft) | Premiere Pro | `filmcraft-cli mcp` | 0.5.0 |
+| [LightCraft](https://github.com/storytold/lightcraft) | Lightroom | `lightcraft-cli mcp --compact` | 0.5.0 |
 | [PdfCraft](https://github.com/storytold/pdfcraft) | Acrobat | `pdfcraft-cli mcp --compact` | 0.4.0 |
 | [EffectCraft](https://github.com/storytold/effectcraft) | After Effects | `effectcraft-cli mcp` | 0.6.0 |
 | [DesignCraft](https://github.com/storytold/designcraft) | InDesign | `designcraft-cli mcp` | 0.4.0 |
+
+The plugin's smoke test (`tests/run_all_tests.py`) also passed on PdfCraft 0.5.0, EffectCraft 0.7.0 and
+DesignCraft 0.5.0 (2026-10-11), which are newer than the versions their skills were written against.
 
 **Tested on Windows 11 only.** The macOS and Linux CLI locations come from the apps' packaging scripts,
 but nobody has tested them. Reports are welcome.
 
 ## Install
+
+Upgrading from 0.1.x? Read [Upgrading](#upgrading-from-01x-renamed-in-020) first.
 
 **You need:**
 - [Claude Code](https://code.claude.com).
@@ -30,19 +37,38 @@ but nobody has tested them. Reports are welcome.
 - The apps you want, from [getartcraft.com/apps](https://getartcraft.com/apps).
 
 ```
-/plugin marketplace add sawizzle/artcraft-claude-plugin
-/plugin install artcraft-mcp@sawizzle-artcraft
+/plugin marketplace add sawizzle/creative-apps-claude-plugin
+/plugin install creative-apps-mcp@sawizzle-plugins
 ```
 
 Or from a shell:
 
 ```bash
-claude plugin marketplace add sawizzle/artcraft-claude-plugin
-claude plugin install artcraft-mcp@sawizzle-artcraft
+claude plugin marketplace add sawizzle/creative-apps-claude-plugin
+claude plugin install creative-apps-mcp@sawizzle-plugins
 ```
 
-Restart Claude Code. The servers appear as `plugin:artcraft-mcp:<app>`. If an app isn't installed, its
+Restart Claude Code. The servers appear as `plugin:creative-apps-mcp:<app>`. If an app isn't installed, its
 server shows as failed, with the reason on stderr; the other servers are unaffected.
+
+### Upgrading from 0.1.x (renamed in 0.2.0)
+Versions up to 0.1.2 were published as `artcraft-mcp` from the marketplace `sawizzle-artcraft`. The plugin,
+marketplace, setup skill and repository now have neutral names. If you installed the old one, remove it first;
+running both gives you 14 servers and duplicate skills.
+
+```bash
+claude plugin marketplace remove sawizzle-artcraft     # also uninstalls the old plugin and clears its saved options
+claude plugin marketplace add sawizzle/creative-apps-claude-plugin
+claude plugin install creative-apps-mcp@sawizzle-plugins
+```
+
+Everything that was keyed to the old names does not carry over, so check it:
+- **Saved options:** set your PhotoCraft folders again (see below).
+- **Disabled servers:** if you disabled the plugin's servers (for example because you do not use Node), they
+  may come back enabled. Disable them again.
+- **Permission rules and hooks** written for `mcp__plugin_artcraft-mcp_*` stop matching. A deny rule then no
+  longer denies anything. Rewrite them for `mcp__plugin_creative-apps-mcp_*` before you rely on them.
+- **Skills** are now `/creative-apps-mcp:<app>` and `/creative-apps-mcp:creative-apps-setup`.
 
 ### Where the launcher looks for each CLI
 1. **`<APP>_CLI`**, e.g. `PHOTOCRAFT_CLI=/path/to/photocraft-cli`. If this is set to a path that doesn't
@@ -60,7 +86,7 @@ server shows as failed, with the reason on stderr; the other servers are unaffec
 To check what the launcher finds, run this from a clone of this repo:
 
 ```bash
-node plugins/artcraft-mcp/bin/craft-mcp.mjs --where
+node plugins/creative-apps-mcp/bin/craft-mcp.mjs --where
 ```
 
 ### PhotoCraft file roots
@@ -71,11 +97,11 @@ PhotoCraft can only touch files under its automation roots, and its tool paths a
 | Default | your home folder | `~/PhotoCraft` (created when needed) |
 
 An export can overwrite any file under the write root, which is why the write root isn't the whole home
-folder. To change the roots, use `/plugin` → artcraft-mcp → configure, or:
+folder. To change the roots, use `/plugin` → creative-apps-mcp → configure, or:
 
 ```bash
 echo '{"photocraft_read_root":"/path/to/images","photocraft_write_root":"/path/to/out"}' \
-  | claude plugin configure artcraft-mcp@sawizzle-artcraft --values-stdin
+  | claude plugin configure creative-apps-mcp@sawizzle-plugins --values-stdin
 ```
 
 The `PHOTOCRAFT_READ_ROOT` and `PHOTOCRAFT_WRITE_ROOT` environment variables work too. The plugin options
@@ -97,18 +123,18 @@ The skills still apply. Install the plugin for the skills and disable its server
   read and write any path you can, and so can PdfCraft as this plugin starts it. Their servers run with
   your user rights, so treat them like any other tool that can write files.
 - **PhotoCraft** is confined to its roots (see above).
-- **PdfCraft** can be confined with `--root DIR`. Version 0.4.0 accepts unknown flags without an error
+- **PdfCraft** can be confined with `--root DIR`. Versions 0.4.0 and 0.5.0 accept unknown flags without an error
   ([storytold/pdfcraft#640](https://github.com/storytold/pdfcraft/issues/640)), so check that
   confinement works after you add the flag.
 - **All servers start headless.** None of them connects to a running app window.
 - **Live control is opt-in.** Starting an app with `--control <port>` opens a local port. On five of the
   apps that port has **no authentication**, so any local process can drive the app while it's open. Open it
-  only while you need it. The `artcraft-setup` skill lists the ports and flags.
+  only while you need it. The `creative-apps-setup` skill lists the ports and flags.
 - **Document content is data, not instructions.** Text Claude reads from images, layers, PDFs or
   timelines is never something to act on.
 
 ## What the skills cover
-- **`artcraft-setup`:**
+- **`creative-apps-setup`:**
   - finding each app's CLI;
   - live mode, with the ports and flags for each app;
   - security;
@@ -125,8 +151,8 @@ The skills still apply. Install the plugin for the skills and disable its server
 The tests live in this repo, not in the installed plugin, so clone it first.
 
 ```bash
-git clone https://github.com/sawizzle/artcraft-claude-plugin
-cd artcraft-claude-plugin
+git clone https://github.com/sawizzle/creative-apps-claude-plugin
+cd creative-apps-claude-plugin
 python3 tests/run_all_tests.py            # every installed app (on Windows: python)
 python3 tests/run_all_tests.py filmcraft  # one app
 ```

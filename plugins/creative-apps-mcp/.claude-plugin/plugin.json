@@ -1,16 +1,15 @@
 {
-  "name": "artcraft-mcp",
-  "version": "0.1.2",
-  "description": "Unofficial: drive the open-source ArtCraft apps (PhotoCraft, VectorCraft, FilmCraft, LightCraft, PdfCraft, EffectCraft, DesignCraft) from Claude Code through their built-in MCP servers, with a tested skill per app. Not affiliated with the ArtCraft Team.",
+  "name": "creative-apps-mcp",
+  "version": "0.2.0",
+  "description": "Unofficial third-party plugin: drive PhotoCraft, VectorCraft, FilmCraft, LightCraft, PdfCraft, EffectCraft and DesignCraft from Claude Code through their built-in MCP servers, with a tested skill per app. Not made, sponsored, endorsed, certified or supported by the apps' developers.",
   "author": {
     "name": "PurpleDaddy",
     "url": "https://github.com/sawizzle"
   },
-  "homepage": "https://github.com/sawizzle/artcraft-claude-plugin",
-  "repository": "https://github.com/sawizzle/artcraft-claude-plugin",
+  "homepage": "https://github.com/sawizzle/creative-apps-claude-plugin",
+  "repository": "https://github.com/sawizzle/creative-apps-claude-plugin",
   "license": "MIT OR Apache-2.0",
   "keywords": [
-    "artcraft",
     "photocraft",
     "vectorcraft",
     "filmcraft",

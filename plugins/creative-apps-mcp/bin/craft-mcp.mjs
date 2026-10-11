@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// craft-mcp: find an ArtCraft app's CLI and run it, passing stdio straight through.
+// craft-mcp: find an app's CLI and run it, passing stdio straight through.
 //   node craft-mcp.mjs <app> [args...]        e.g. node craft-mcp.mjs photocraft mcp
 //   node craft-mcp.mjs --where                 print where each CLI was found (setup check)
 // Lookup order: $<APP>_CLI (must exist if set), then absolute PATH entries, then the platform's
@@ -9,7 +9,7 @@ import { accessSync, constants, mkdirSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import path from "node:path";
 
-const VERSION = "0.1.2";
+const VERSION = "0.2.0";
 
 const APPS = {
   photocraft: "PhotoCraft",

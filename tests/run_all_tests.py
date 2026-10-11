@@ -1,4 +1,4 @@
-"""End-to-end check of every ArtCraft MCP server, started through the plugin's own launcher.
+"""End-to-end check of every supported app's MCP server, started through the plugin's own launcher.
 
     python tests/run_all_tests.py [app ...]
 
@@ -15,11 +15,11 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-LAUNCHER = os.path.join(ROOT, "plugins", "artcraft-mcp", "bin", "craft-mcp.mjs")
+LAUNCHER = os.path.join(ROOT, "plugins", "creative-apps-mcp", "bin", "craft-mcp.mjs")
 IN = os.path.join(HERE, "inputs").replace("\\", "/")
 OUT = os.path.join(HERE, "out").replace("\\", "/")
 
-# Server args per app: the same as plugins/artcraft-mcp/.mcp.json, except PhotoCraft gets explicit test roots
+# Server args per app: the same as plugins/creative-apps-mcp/.mcp.json, except PhotoCraft gets explicit test roots
 # (its paths are relative to them).
 ARGS = {
     "photocraft": ["--automation-read-root", HERE.replace("\\", "/"), "--automation-write-root", OUT],
